@@ -1,50 +1,89 @@
-# Welcome to your Expo app 👋
+## Установка и запуск
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### 1. Установите Node.js и Git
 
-## Get started
+- [Node.js LTS](https://nodejs.org) — скачайте и установите
+- [Git](https://git-scm.com/downloads) — скачайте и установите
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Проверьте в терминале:
 
 ```bash
-npm run reset-project
+node -v
+git --version
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Клонируйте репозиторий
 
-## Learn more
+```bash
+git clone https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ.git
+cd ВАШ_РЕПОЗИТОРИЙ
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Установите зависимости
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+### 4. Запустите приложение
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Установите **Expo Go** на телефон ([App Store](https://apps.apple.com/app/expo-go/id982107779) / [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent)), подключите телефон и компьютер к **одной Wi-Fi сети** и отсканируйте QR-код. 
+
+## Если регистрация в приложении не работает, включите VPN!
+
+---
+
+## Загрузка на GitHub
+
+> **GitHub не открывается или регистрация не проходит? Включите VPN** — часть провайдеров блокирует доступ к сайту.
+
+### 1. Зарегистрируйтесь и создайте репозиторий
+
+1. Перейдите на [github.com](https://github.com) → **Sign up**
+2. После входа: **+** → **New repository** → укажите название → **Create repository**
+3. Скопируйте URL репозитория
+
+### 2. Загрузите проект
+
+Выполните в папке проекта:
+
+```bash
+git init
+git config --global user.name "Имя"
+git config --global user.email "email@example.com"
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/ЛОГИН/РЕПО.git
+git push -u origin main
+```
+
+При запросе пароля введите **Personal Access Token** (не пароль от аккаунта).
+Получить токен: GitHub → Settings → Developer settings → Personal access tokens → Generate new token → scope `repo`.
+
+### 3. Обновление после изменений
+
+```bash
+git add .
+git commit -m "Описание изменений"
+git push
+```
+
+---
+
+## Структура проекта
+
+```
+app/
+├── (tabs)/       # Экраны с навигацией (exchange, rates, history, profile...)
+├── login.tsx     # Вход
+├── register.tsx  # Регистрация
+└── api.ts        # API-клиент
+components/       # Переиспользуемые компоненты
+constants/        # Тема и цвета
+hooks/            # useResponsive и др.
+```
